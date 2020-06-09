@@ -1,12 +1,4 @@
 node {
- 	agent { 
-		dockerfile {
-			filename 'Dockerfile'
-			dir '.'
-			label 'jenkins-label'
-			args '-p 8000:80'
-		}
-	}
 	
 	def app
 	
