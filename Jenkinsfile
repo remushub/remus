@@ -7,7 +7,7 @@ node {
 	}
 	
 	stage('Build image') {
-		app = docker.build("remushub/aspnet-build").withRun('-p 8000:80')
+		app = docker.build("remushub/aspnet-build").run('-p 8000:80')
 	}
 	
 	stage('Test') {
