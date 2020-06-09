@@ -7,11 +7,11 @@ node {
 	}
 	
 	stage('Build image') {
-		app = docker.build("remushub/aspnet-build")
+		app = docker.build("remushub/aspnet-build").withRun('-p 8000:80')
 	}
 	
 	stage('Test') {
-		app.inside('-p 8000:80') {
+		app.inside {
 			sh 'sleep 300'
 		}
 	}
