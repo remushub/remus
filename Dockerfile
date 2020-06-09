@@ -12,4 +12,4 @@ WORKDIR /app/Remus
 RUN dotnet publish -c Release -o out
 
 WORKDIR /app/Remus/out
-ENTRYPOINT ["dotnet", "Remus.dll"]
+CMD dotnet Remus.dll
