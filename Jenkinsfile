@@ -11,7 +11,7 @@ node {
 	}
 	
 	stage('Test') {
-		app.inside('-p 8000:80') {
+		app.inside('-p 8000:5000') {
 			sh 'dotnet /app/Remus/out/Remus.dll'
 			sh 'sleep 300'
 		}
