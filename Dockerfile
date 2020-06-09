@@ -10,6 +10,3 @@ RUN dotnet restore
 COPY Remus/. ./Remus/
 WORKDIR /app/Remus
 RUN dotnet publish -c Release -o out
-
-WORKDIR /app/Remus/out
-CMD dotnet Remus.dll
