@@ -11,7 +11,7 @@ node {
 	}
 	
 	stage('Test') {
-		app.inside('-p 8000:56042') {
+		app.inside('-p 8000:80') {
 			sh 'sleep 300'
 		}
 	}
