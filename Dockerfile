@@ -10,3 +10,10 @@ RUN dotnet restore
 COPY Remus/. ./Remus/
 WORKDIR /app/Remus
 RUN dotnet publish -c Release -o out
+
+
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
+WORKDIR /app
+COPY --from=build /app/Remus/out ./
+
+CMD dotnet Remus.dll
