@@ -7,7 +7,7 @@ node {
 	}
 	
 	stage('Build image') {
-		app = docker.build("remushub/aspnet-test", "./Dockerfile.test")
+		app = docker.build("remushub/aspnet-test", "-f Dockerfile.test")
 	}
 	
 	stage('Test') {
