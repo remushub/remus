@@ -15,4 +15,4 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
 COPY --from=build /app/Remus/out ./
-CMD dotnet /app/Remus.dll
+ENTRYPOINT["dotnet", "/app/Remus.dll"]
